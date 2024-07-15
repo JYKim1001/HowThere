@@ -1,0 +1,67 @@
+
+server:
+  port: 8080
+  servlet:
+    context-path: /
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+
+spring:
+  profiles:
+    include:
+    - Secret
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/spring
+    username: root
+    password: 12345
+#    EzenThereOk123!
+
+
+  
+
+  mvc:
+    view:
+      prefix: /templates/
+      suffix: .mustache
+    hiddenmethod:
+      filter:
+        enabled: true
+
+  jpa:
+    hibernate:
+      ddl-auto: update #create update none
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    show-sql: true
+    
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: rjs0205@gmail.com
+    password: vkkiilxvxwjkhrjn
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            required: true
+          connectiontimeout: 5000
+          timeout: 5000
+          writetimeout: 5000
+               
+path:
+#  upload: /src/main/resources/static/upload
+#  download: /src/main/resources/static/download
+  upload: D:/KKKIM_Project/HAT/web/TravelPlatform_Test/src/main/resources/static/upload/
+  download: D:/KKKIM_Project/HAT/web/TravelPlatform_Test/src/main/resources/static/download/ 
+
+#file:
+#  upload-dir : /home/ec2-user/upload
+
+
+  profiles:
+    include: Secret
